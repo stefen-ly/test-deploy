@@ -1,44 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>HTML layout</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ISTAD - Institute of IT offers courses in web development, from basic to professional levels.">
+    <meta name="keywords" content="ISTAD, IT courses, web development, HTML, CSS, JavaScript, React, Node.js">
+    <meta name="author" content="ISTAD Institute">
+    <title>ISTAD - Institute of IT</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 16px 32px;
+        }
+
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 29px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 16px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover, nav a[aria-current="page"] {
+            background-color: #3b82f6;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 32px auto;
+            padding: 0 16px;
+        }
+
+        main h2 {
+            font-size: 32px;
+            color: #1e3a8a;
+            margin-bottom: 16px;
+        }
+
+        main hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin-bottom: 24px;
+        }
+
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .course-card {
+            background-color: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-card h3 {
+            font-size: 20px;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+
+        .course-card p {
+            color: #555;
+        }
+
+        footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 48px 16px;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+
+        footer h4 {
+            font-size: 19px;
+            margin-bottom: 16px;
+            color: #93c5fd;
+        }
+
+        footer p, footer li {
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: #93c5fd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #3b82f6;
+            text-decoration: underline;
+        }
+
+        footer address {
+            font-style: normal;
+        }
+
+        footer .newsletter input {
+            padding: 8px;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        footer .newsletter button {
+            padding: 8px 16px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        footer .newsletter button:hover {
+            background-color: #1e3a8a;
+        }
+
+        footer .social-links a {
+            margin-right: 16px;
+        }
+
+        @media (min-width: 640px) {
+            header .container {
+                flex-wrap: nowrap;
+            }
+
+            nav ul {
+                flex-wrap: nowrap;
+            }
+        }
+
+        @media (max-width: 639px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 16px;
+            }
+
+            nav a {
+                display: block;
+                width: 100%;
+            }
+
+            footer .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-      <header>
+    <header>
+        <div class="container">
             <h1>ISTAD - Institute of IT</h1>
-            <a href="../HTML 3thr/index.html">Home</a>
-            <a target="_blank" href="aboutUs.html">About Us</a>
-            <a target="_blank" href="contactUs.html">Contact Us</a>
-            <a target="_blank" href="iframe.html">Iframe</a>
-            <a target="_blank" href="table.html">Table</a>
-            <a target="_blank" href="fb_plugIn_iframe.html">ISTAD</a>
-      </header>
-      <main>
-            <h2>Our Courses</h2>
-            <hr>
-            <section>
-                  <h3>Basic Course</h3>
-                  <p>Learn the fundamentals of HTML, CSS, and JavaScript.</p>
-            </section>
-            <section>
-                  <h3>Advanced Course</h3>
-                  <p>Deep dive into advanced topics like React, Node.js, and more.</p>
-            </section>
-            <section>
-                  <h3>Professional Course</h3>
-                  <p>Prepare for a career in tech with our professional training.</p>
-            </section>
-            
-      </main>
-      <footer>
-            <p>&copy; 2023 ISTAD. All rights reserved.</p>
-            <address>
-                <p>Contact us: 012 345 678</p>
-                <p>Email: vanlythouen@gmail.com</p>  
-            </address>
-            
-      </footer>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="../HTML 3thr/index.html" aria-current="page">Home</a></li>
+                    <li><a href="aboutUs.html" target="_blank" rel="noopener noreferrer">About Us</a></li>
+                    <li><a href="contactUs.html" target="_blank" rel="noopener noreferrer">Contact Us</a></li>
+                    <li><a href="iframe.html" target="_blank" rel="noopener noreferrer">Iframe Demo</a></li>
+                    <li><a href="table.html" target="_blank" rel="noopener noreferrer">Table Demo</a></li>
+                    <li><a href="fb_plugIn_iframe.html" target="_blank" rel="noopener noreferrer">ISTAD Social</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h2>Our Courses</h2>
+        <hr>
+        <section class="courses">
+            <article class="course-card">
+                <h3>Basic Course</h3>
+                <p>Learn the fundamentals of HTML, CSS, and JavaScript to build your first web pages.</p>
+            </article>
+            <article class="course-card">
+                <h3>Advanced Course</h3>
+                <p>Deep dive into advanced topics like React, Node.js, and modern web development frameworks.</p>
+            </article>
+            <article class="course-card">
+                <h3>Professional Course</h3>
+                <p>Prepare for a career in tech with our professional training and real-world projects.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div>
+                <h4>About ISTAD</h4>
+                <p>Empowering the next generation of tech leaders through world-class IT education.</p>
+                <p>© 2025 ISTAD. All rights reserved.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../HTML 3thr/index.html">Home</a></li>
+                    <li><a href="aboutUs.html" target="_blank" rel="noopener noreferrer">About Us</a></li>
+                    <li><a href="contactUs.html" target="_blank" rel="noopener noreferrer">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <address>
+                    <p>Phone: <a href="tel:+85512345678">012 345 678</a></p>
+                    <p>Email: <a href="mailto:vanlythouen@gmail.com">vanlythouen@gmail.com</a></p>
+                </address>
+                <div class="social-links">
+                    <a href="https://facebook.com/istad" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a href="https://twitter.com/istad" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    <a href="https://linkedin.com/company/istad" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://instagram.com/istad" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+            </div>
+            <div class="newsletter">
+                <h4>Stay Updated</h4>
+                <p>Subscribe to our newsletter for the latest course updates.</p>
+                <input type="email" placeholder="Enter your email" aria-label="Email for newsletter">
+                <button aria-label="Subscribe to newsletter">Subscribe</button>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
